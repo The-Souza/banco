@@ -2,11 +2,19 @@ import json
 from pathlib import Path
 
 class Cliente:
-    def __init__(self, cpf: int, nome: str, idade: int, celular: int) -> None:
-        self.cpf = cpf
+    def __init__(self, nome: str, cpf: int, idade: int, celular: int) -> None:
         self.nome = nome
+        self.cpf = cpf
         self.idade = idade
         self.celular = celular
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, nome: str):
+        self._nome = nome
 
     @property
     def cpf(self):
@@ -16,14 +24,6 @@ class Cliente:
     def cpf(self, cpf: int):
         self._cpf = cpf
         
-    @property
-    def nome(self):
-        return self._nome
-
-    @nome.setter
-    def nome(self, nome: str):
-        self._nome = nome
-
     @property
     def idade(self):
         return self._idade
@@ -51,6 +51,10 @@ CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
     dados = json.load(arquivo)
 
+dados[0]['_nome'] = 'Guilherme Campos'
+dados[0]['_cpf'] = 12345678910
+dados[0]['_idade'] = 22
+dados[0]['_celular'] = 11965412354
 dados[0]['_agencia'] = 101
 dados[0]['_conta'] = 5564
 dados[0]['_senha'] = 'lincecaloteira'
