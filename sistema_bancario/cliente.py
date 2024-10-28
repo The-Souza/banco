@@ -1,5 +1,7 @@
 import json
 from pathlib import Path
+import shutil
+import tempfile
 
 class Cliente:
     def __init__(self, nome: str, cpf: int, idade: int, celular: int) -> None:
@@ -51,11 +53,20 @@ CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
     dados = json.load(arquivo)
 
-dados[0]['_nome'] = 'Guilherme Campos'
-dados[0]['_cpf'] = 12345678910
-dados[0]['_idade'] = 22
-dados[0]['_celular'] = 11965412354
-dados[0]['_agencia'] = 101
-dados[0]['_conta'] = 5564
-dados[0]['_senha'] = 'lincecaloteira'
-print(dados[0])
+def salvar_dados(indice: int, nome: str, cpf: int, idade: int, celular: int, agencia: str, conta: int, senha: str):
+    with open(CAMINHO_ARQUIVO, 'r', encoding='utf-8') as arquivo, \
+        tempfile.NamedTemporaryFile('w', delete=False) as saida:
+        dados = json.load(arquivo)
+        dados[indice]['_nome'] = nome
+        dados[indice]['_cpf'] = cpf
+        dados[indice]['_idade'] = idade
+        dados[indice]['_celular'] = celular
+        dados[indice]['_agencia'] = agencia
+        dados[indice]['_conta'] = conta
+        dados[indice]['_senha'] = senha
+        json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',',':'))
+
+    shutil.move(saida.name, CAMINHO_ARQUIVO)
+    print(dados[indice])
+
+print(dados[::1])
