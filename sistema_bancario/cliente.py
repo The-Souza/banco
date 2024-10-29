@@ -59,11 +59,12 @@ def ver_dados(indice):
         dados = json.load(arquivo)
     print(dados[indice])
 
-def salvar_dados(indice: int, nome: str, cpf: int, idade: int, celular: int, senha: str):
+def salvar_dados(indice: int, nome: str, sobrenome: str, cpf: int, idade: int, celular: int, senha: str):
     with open(CAMINHO_ARQUIVO, 'r', encoding='utf-8') as arquivo, \
         tempfile.NamedTemporaryFile('w', delete=False) as saida:
         dados = json.load(arquivo)
         dados[indice]['_nome'] = nome
+        dados[indice]['_sobrenome'] = sobrenome
         dados[indice]['_cpf'] = cpf
         dados[indice]['_idade'] = idade
         dados[indice]['_celular'] = celular
@@ -73,5 +74,4 @@ def salvar_dados(indice: int, nome: str, cpf: int, idade: int, celular: int, sen
     shutil.move(saida.name, CAMINHO_ARQUIVO)
         
 if __name__ == '__main__':
-    salvar_dados(0, 'gg', 123, 22, 1232, 'lincecaloteira')
-    # ver_dados(0)
+    ...
