@@ -1,6 +1,5 @@
 from cliente import salvar_dados
 
-
 indice = 0
 while True:
 	print('Bem vindo, você já é clinte?')
@@ -15,7 +14,6 @@ while True:
 		break
 
 	elif acesso == 'NÃO':
-		indice += 1
 		while True:
 			print('Informe-nos seus dados: Nome, Sobrenome, CPF, Idade e Celular para criarmos sua conta:')
 			_nome = input('Nome: ')
@@ -70,7 +68,7 @@ while True:
 
 			_senha = input('Senha: ')
 			tamanho_senha = len(_senha)
-			if tamanho_senha < 8:
+			if tamanho_senha < 5:
 				print('Senha muito pequena.')
 				print()
 				continue
@@ -87,9 +85,9 @@ while True:
 			salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
 			print('Seus dados foram coletados, agora efetue o login.')
 			print()
+			indice += 1
 			break
 		
-
 	else:
-		print('Por favor esolha uma das opções.')
+		print('Por favor escolha uma das opções.')
 		print()
