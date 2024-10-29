@@ -1,4 +1,4 @@
-from cliente import salvar_dados
+from cliente import Cliente
 
 indice = 0
 while True:
@@ -82,7 +82,8 @@ while True:
 			_idade = int(idade)
 			_celular = int(celular)
 
-			salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
+			c = Cliente()
+			c.salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
 			print('Seus dados foram coletados, agora efetue o login.')
 			print()
 			indice += 1
