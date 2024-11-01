@@ -9,8 +9,22 @@ while True:
 	if acesso == 'SIM':
 		print('Por favor digite sua conta e agência:')
 		_conta = input('Conta: ')
+
 		_agencia = input('Agência: ')
+
+		print('Por favor digite sua Senha:')
 		_senha = input('Senha: ')
+		tamanho_senha = len(_senha)
+		if tamanho_senha < 5:
+			print('Senha muito pequena.')
+			print()
+			continue
+		if tamanho_senha > 20:
+			print()
+			print('Senha muito grande.')
+			continue
+		print()
+
 		break
 
 	elif acesso == 'NÃO':

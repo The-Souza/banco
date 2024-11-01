@@ -2,15 +2,12 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
-import secrets
-
-random = secrets.SystemRandom()
 
 CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 
 class Cliente:
 
-    def ver_dados(sefl, indice: int):
+    def checar_dados(self, indice: int):
         self.indice = indice
         with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
             dados = json.load(arquivo)
@@ -35,6 +32,7 @@ class Cliente:
                 json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',',':'))
                 
             shutil.move(saida.name, CAMINHO_ARQUIVO)
-        
+
 if __name__ == '__main__':
-    ...
+    c = Cliente()
+    c.checar_dados(0)
