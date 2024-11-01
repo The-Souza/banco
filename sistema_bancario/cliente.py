@@ -6,6 +6,12 @@ import tempfile
 CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 
 class Cliente:
+    
+    def conta_agencia(self, indice: int):
+        self.indice = indice
+        with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
+            dados = json.load(arquivo)
+        print(f'Conta: {dados[indice]['_agencia']} - Agência: {dados[indice]['_conta']}-{indice}')
 
     def checar_dados(self, indice: int):
         self.indice = indice
@@ -35,4 +41,4 @@ class Cliente:
 
 if __name__ == '__main__':
     c = Cliente()
-    c.checar_dados(0)
+    c.conta_agencia(0)

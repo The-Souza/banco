@@ -30,7 +30,7 @@ while True:
 	elif acesso == 'NÃO':
 		while True:
 			print('Informe-nos seus dados: Nome, Sobrenome, CPF, Idade e Celular para criarmos sua conta:')
-			_nome = input('Nome: ')
+			_nome = input('Nome: ').upper()
 			if _nome.isalpha():
 				...
 			else:
@@ -38,7 +38,7 @@ while True:
 				print()
 				continue
 
-			_sobrenome = input('Sobrenome: ')
+			_sobrenome = input('Sobrenome: ').upper()
 			if _sobrenome.isalpha():
 				...
 			else:
@@ -99,6 +99,8 @@ while True:
 			c = Cliente()
 			c.salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
 			print('Seus dados foram coletados, agora efetue o login.')
+			print('Esses são seus dados de Conta e Agência.')
+			c.conta_agencia(indice)
 			print()
 			indice += 1
 			break
