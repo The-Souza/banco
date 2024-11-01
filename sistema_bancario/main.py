@@ -16,8 +16,13 @@ while True:
 	elif acesso == 'NÃO':
 		while True:
 			print('Informe-nos seus dados: Nome, Sobrenome, CPF, Idade e Celular para criarmos sua conta:')
-			_nome = input('Nome: ' if _nome.isalpha() else 'Por favor, digite apenas letras.')
-			continue
+			_nome = input('Nome: ')
+			if _nome.isalpha():
+				...
+			else:
+				print('Por favor, digite apenas letras.')
+				print()
+				continue
 
 			_sobrenome = input('Sobrenome: ')
 			if _sobrenome.isalpha():
