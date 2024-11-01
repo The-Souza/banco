@@ -10,6 +10,8 @@ while True:
 		print('Por favor digite sua conta e agência:')
 		_conta = input('Conta: ')
 
+# FAZER A DA VALIDAÇÃO DA AGÊNCIA E A CONTA
+
 		_agencia = input('Agência: ')
 
 		print('Por favor digite sua Senha:')
