@@ -11,7 +11,7 @@ class Cliente:
         self.indice = indice
         with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
             dados = json.load(arquivo)
-        print(f'Conta: {dados[indice]['_agencia']} - Agência: {dados[indice]['_conta']}-{indice}')
+        print(f'Conta: {dados[indice]['_agencia']} - Agência: {dados[indice]['_conta']}')
 
     def checar_dados(self, indice: int):
         self.indice = indice

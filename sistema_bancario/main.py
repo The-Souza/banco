@@ -32,66 +32,78 @@ while True:
 	elif acesso == 'NÃO':
 		while True:
 			print('Informe-nos seus dados: Nome, Sobrenome, CPF, Idade e Celular para criarmos sua conta:')
+			print()
 			_nome = input('Nome: ').upper()
 			if _nome.isalpha():
 				...
 			else:
+				print()
 				print('Por favor, digite apenas letras.')
 				print()
-				continue
-
+				_nome = input('Nome: ').upper()
+				
 			_sobrenome = input('Sobrenome: ').upper()
 			if _sobrenome.isalpha():
 				...
 			else:
+				print()
 				print('Por favor, digite apenas letras.')
 				print()
-				continue
+				_sobrenome = input('Sobrenome: ').upper()
 
 			cpf = input('CPF: ')
 			if cpf.isdigit():
 				...
 			else:
+				print()
 				print('Por favor, digite apenas números.')
 				print()
-				continue
+				cpf = input('CPF: ')
+
 			tamanho_cpf = len(cpf)
 			if tamanho_cpf < 11 or tamanho_cpf > 11:
+				print()
 				print('Por favor, digite CPF de forma correta.')
 				print()
-				continue
+				cpf = input('CPF: ')
 			
 			idade = input('Idade: ')
 			if idade.isdigit():
 				...
 			else:
+				print()
 				print('Por favor, digite apenas números.')
 				print()
-				continue
+				idade = input('Idade: ')
 
 			celular = input('Celular: ')
 			if celular.isdigit():
 				...
 			else:
+				print()
 				print('Por favor, digite apenas números.')
 				print()
-				continue
+				celular = input('Celular: ')
+
 			tamanho_celular = len(celular)
 			if tamanho_celular < 11 or tamanho_celular > 11:
+				print()
 				print('Por favor, digite o número de celular de forma correta.')
 				print()
-				continue
+				celular = input('Celular: ')
 
 			_senha = input('Senha: ')
 			tamanho_senha = len(_senha)
 			if tamanho_senha < 5:
 				print('Senha muito pequena.')
 				print()
-				continue
+				_senha = input('Senha: ')
+
 			if tamanho_senha > 20:
 				print()
 				print('Senha muito grande.')
-				continue
+				_senha = input('Senha: ')
+
 			print()
 
 			_cpf = int(cpf)
@@ -102,6 +114,7 @@ while True:
 			c.salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
 			print('Seus dados foram coletados, agora efetue o login.')
 			print('Esses são seus dados de Conta e Agência.')
+			print()
 			c.conta_agencia(indice)
 			print()
 			indice += 1
