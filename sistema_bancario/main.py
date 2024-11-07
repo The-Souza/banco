@@ -26,7 +26,6 @@ while True:
 			print('Senha muito grande.')
 			continue
 		print()
-
 		break
 
 	elif acesso == 'NÃO':
@@ -34,76 +33,93 @@ while True:
 			print('Informe-nos seus dados: Nome, Sobrenome, CPF, Idade e Celular para criarmos sua conta:')
 			print()
 			_nome = input('Nome: ').upper()
-			if _nome.isalpha():
-				...
-			else:
-				print()
-				print('Por favor, digite apenas letras.')
-				print()
-				_nome = input('Nome: ').upper()
+			while True:
+				if _nome.isalpha():
+					break
+				else:
+					print()
+					print('Por favor, digite seu nome da forma correta.')
+					print()
+					_nome = input('Nome: ').upper()
 				
 			_sobrenome = input('Sobrenome: ').upper()
-			if _sobrenome.isalpha():
-				...
-			else:
-				print()
-				print('Por favor, digite apenas letras.')
-				print()
-				_sobrenome = input('Sobrenome: ').upper()
+			while True:
+				if _sobrenome.isalpha():
+					break
+				else:
+					print()
+					print('Por favor, digite seu sobrenome da forma correta.')
+					print()
+					print(f'Nome:', _nome)
+					_sobrenome = input('Sobrenome: ').upper()
 
 			cpf = input('CPF: ')
-			if cpf.isdigit():
-				...
-			else:
-				print()
-				print('Por favor, digite apenas números.')
-				print()
-				cpf = input('CPF: ')
-
-			tamanho_cpf = len(cpf)
-			if tamanho_cpf < 11 or tamanho_cpf > 11:
-				print()
-				print('Por favor, digite CPF de forma correta.')
-				print()
-				cpf = input('CPF: ')
+			while True:
+				tamanho_cpf = len(cpf)
+				if cpf.isdigit() or tamanho_cpf == 11:
+					break
+				else:
+					print()
+					print('Por favor, digite o CPF de forma correta.')
+					print()
+					print(f'Nome:', _nome)
+					print(f'Sobrenome:', _sobrenome)
+					cpf = input('CPF: ')
 			
 			idade = input('Idade: ')
-			if idade.isdigit():
-				...
-			else:
-				print()
-				print('Por favor, digite apenas números.')
-				print()
-				idade = input('Idade: ')
+			while True:
+				if idade.isdigit():
+					break
+				else:
+					print()
+					print('Por favor, sua idade da forma correta.')
+					print()
+					print(f'Nome:', _nome)
+					print(f'Sobrenome:', _sobrenome)
+					print(f'CPF:', cpf)
+					idade = input('Idade: ')
 
 			celular = input('Celular: ')
-			if celular.isdigit():
-				...
-			else:
-				print()
-				print('Por favor, digite apenas números.')
-				print()
-				celular = input('Celular: ')
-
-			tamanho_celular = len(celular)
-			if tamanho_celular < 11 or tamanho_celular > 11:
-				print()
-				print('Por favor, digite o número de celular de forma correta.')
-				print()
-				celular = input('Celular: ')
+			while True:
+				tamanho_celular = len(celular)
+				if celular.isdigit() or tamanho_celular == 11:
+					break
+				else:
+					print()
+					print('Por favor, digite o número de celular de forma correta.')
+					print()
+					print(f'Nome:', _nome)
+					print(f'Sobrenome:', _sobrenome)
+					print(f'CPF:', cpf)
+					print(f'Idade:', idade)
+					celular = input('Celular: ')
 
 			_senha = input('Senha: ')
-			tamanho_senha = len(_senha)
-			if tamanho_senha < 5:
-				print('Senha muito pequena.')
-				print()
-				_senha = input('Senha: ')
+			while True:
+				tamanho_senha = len(_senha)
+				if tamanho_senha < 5:
+					print()
+					print('Senha muito pequena.')
+					print()
+					print(f'Nome:', _nome)
+					print(f'Sobrenome:', _sobrenome)
+					print(f'CPF:', cpf)
+					print(f'Idade:', idade)
+					print(f'Celular:', celular)
+					_senha = input('Senha: ')
 
-			if tamanho_senha > 20:
-				print()
-				print('Senha muito grande.')
-				_senha = input('Senha: ')
-
+				elif tamanho_senha > 20:
+					print()
+					print('Senha muito grande.')
+					print()
+					print(f'Nome:', _nome)
+					print(f'Sobrenome:', _sobrenome)
+					print(f'CPF:', cpf)
+					print(f'Idade:', idade)
+					print(f'Celular:', celular)
+					_senha = input('Senha: ')
+				else:
+					break
 			print()
 
 			_cpf = int(cpf)
