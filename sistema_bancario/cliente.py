@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+import pprint
 
 CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 
@@ -17,7 +18,7 @@ class Cliente:
         self.indice = indice
         with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
             dados = json.load(arquivo)
-        print(dados[indice])
+        pprint.pprint(dados[indice], sort_dicts=False)
 
     def salvar_dados(self, indice: int, nome: str, sobrenome: str, cpf: int, idade: int, celular: int, senha: str):
             self.nome = nome
@@ -42,3 +43,5 @@ class Cliente:
 if __name__ == '__main__':
     c = Cliente()
     c.conta_agencia(0)
+    print()
+    c.checar_dados(0)
