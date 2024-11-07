@@ -1,4 +1,5 @@
 from cliente import Cliente
+import os
 
 indice = 0
 while True:
@@ -37,6 +38,7 @@ while True:
 				if _nome.isalpha():
 					break
 				else:
+					os.system('cls')
 					print()
 					print('Por favor, digite seu nome da forma correta.')
 					print()
@@ -47,6 +49,7 @@ while True:
 				if _sobrenome.isalpha():
 					break
 				else:
+					os.system('cls')
 					print()
 					print('Por favor, digite seu sobrenome da forma correta.')
 					print()
@@ -59,6 +62,7 @@ while True:
 				if cpf.isdigit() or tamanho_cpf == 11:
 					break
 				else:
+					os.system('cls')
 					print()
 					print('Por favor, digite o CPF de forma correta.')
 					print()
@@ -71,6 +75,7 @@ while True:
 				if idade.isdigit():
 					break
 				else:
+					os.system('cls')
 					print()
 					print('Por favor, sua idade da forma correta.')
 					print()
@@ -85,6 +90,7 @@ while True:
 				if celular.isdigit() or tamanho_celular == 11:
 					break
 				else:
+					os.system('cls')
 					print()
 					print('Por favor, digite o número de celular de forma correta.')
 					print()
@@ -98,6 +104,7 @@ while True:
 			while True:
 				tamanho_senha = len(_senha)
 				if tamanho_senha < 5:
+					os.system('cls')
 					print()
 					print('Senha muito pequena.')
 					print()
@@ -109,6 +116,7 @@ while True:
 					_senha = input('Senha: ')
 
 				elif tamanho_senha > 20:
+					os.system('cls')
 					print()
 					print('Senha muito grande.')
 					print()
@@ -119,6 +127,7 @@ while True:
 					print(f'Celular:', celular)
 					_senha = input('Senha: ')
 				else:
+					os.system('cls')
 					break
 			print()
 
