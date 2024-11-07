@@ -6,7 +6,7 @@ while True:
 	print('Bem vindo, você já é clinte?')
 	acesso = input('[SIM] / [NÃO]:\n ').upper()
 	print()
-	
+
 	if acesso == 'SIM':
 		print('Por favor digite sua conta e agência:')
 		_conta = input('Conta: ')
@@ -43,7 +43,7 @@ while True:
 					print('Por favor, digite seu nome da forma correta.')
 					print()
 					_nome = input('Nome: ').upper()
-				
+
 			_sobrenome = input('Sobrenome: ').upper()
 			while True:
 				if _sobrenome.isalpha():
@@ -69,7 +69,7 @@ while True:
 					print(f'Nome:', _nome)
 					print(f'Sobrenome:', _sobrenome)
 					cpf = input('CPF: ')
-			
+
 			idade = input('Idade: ')
 			while True:
 				if idade.isdigit():
@@ -144,7 +144,7 @@ while True:
 			print()
 			indice += 1
 			break
-		
+
 	else:
 		print('Por favor escolha uma das opções.')
 		print()

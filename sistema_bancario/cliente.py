@@ -6,8 +6,8 @@ import pprint
 
 CAMINHO_ARQUIVO = Path(__file__).parent / 'banco_de_dados.json'
 
+
 class Cliente:
-    
     def conta_agencia(self, indice: int):
         self.indice = indice
         with open(CAMINHO_ARQUIVO, 'r', encoding='utf8') as arquivo:
@@ -26,7 +26,7 @@ class Cliente:
             self.idade = idade
             self.celular = celular
             self.senha = senha
-        
+
             with open(CAMINHO_ARQUIVO, 'r', encoding='utf-8') as arquivo, \
                 tempfile.NamedTemporaryFile('w', delete=False) as saida:
                 dados = json.load(arquivo)
@@ -37,7 +37,7 @@ class Cliente:
                 dados[indice]['_celular'] = celular
                 dados[indice]['_senha'] = senha
                 json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',',':'))
-                
+
             shutil.move(saida.name, CAMINHO_ARQUIVO)
 
 if __name__ == '__main__':
