@@ -21,24 +21,24 @@ class Cliente:
         pprint.pprint(dados[indice], sort_dicts=False)
 
     def salvar_dados(self, indice: int, nome: str, sobrenome: str, cpf: int, idade: int, celular: int, senha: str):
-            self.nome = nome
-            self.cpf = cpf
-            self.idade = idade
-            self.celular = celular
-            self.senha = senha
+        self.nome = nome
+        self.cpf = cpf
+        self.idade = idade
+        self.celular = celular
+        self.senha = senha
 
-            with open(CAMINHO_ARQUIVO, 'r', encoding='utf-8') as arquivo, \
-                tempfile.NamedTemporaryFile('w', delete=False) as saida:
-                dados = json.load(arquivo)
-                dados[indice]['_nome'] = nome
-                dados[indice]['_sobrenome'] = sobrenome
-                dados[indice]['_cpf'] = cpf
-                dados[indice]['_idade'] = idade
-                dados[indice]['_celular'] = celular
-                dados[indice]['_senha'] = senha
-                json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',', ':'))
+        with open(CAMINHO_ARQUIVO, 'r', encoding='utf-8') as arquivo, \
+            tempfile.NamedTemporaryFile('w', delete=False) as saida:
+            dados = json.load(arquivo)
+            dados[indice]['_nome'] = nome
+            dados[indice]['_sobrenome'] = sobrenome
+            dados[indice]['_cpf'] = cpf
+            dados[indice]['_idade'] = idade
+            dados[indice]['_celular'] = celular
+            dados[indice]['_senha'] = senha
+            json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',', ':'))
 
-            shutil.move(saida.name, CAMINHO_ARQUIVO)
+        shutil.move(saida.name, CAMINHO_ARQUIVO)
 
 
 if __name__ == '__main__':
