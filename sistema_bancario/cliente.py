@@ -36,9 +36,10 @@ class Cliente:
                 dados[indice]['_idade'] = idade
                 dados[indice]['_celular'] = celular
                 dados[indice]['_senha'] = senha
-                json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',',':'))
+                json.dump(dados, saida, ensure_ascii=False, indent=4, separators=(',', ':'))
 
             shutil.move(saida.name, CAMINHO_ARQUIVO)
+
 
 if __name__ == '__main__':
     c = Cliente()
