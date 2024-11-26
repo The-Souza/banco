@@ -2,6 +2,8 @@ from cliente import Cliente
 import os
 
 indice = 0
+c = Cliente()
+
 while True:
 	print('Bem vindo, você já é clinte?')
 	acesso = input('[SIM] / [NÃO]:\n ').upper()
@@ -10,23 +12,11 @@ while True:
 	if acesso == 'SIM':
 		print('Por favor digite sua conta e agência:')
 		_conta = input('Conta: ')
-
-# FAZER A DA VALIDAÇÃO DA AGÊNCIA E A CONTA
-
 		_agencia = input('Agência: ')
-
-		print('Por favor digite sua Senha:')
-		_senha = input('Senha: ')
-		tamanho_senha = len(_senha)
-		if tamanho_senha < 5:
-			print('Senha muito pequena.')
-			print()
-			continue
-		if tamanho_senha > 20:
-			print()
-			print('Senha muito grande.')
-			continue
 		print()
+		_senha = input('Senha: ')
+		
+
 		break
 
 	elif acesso == 'NÃO':
@@ -135,7 +125,6 @@ while True:
 			_idade = int(idade)
 			_celular = int(celular)
 
-			c = Cliente()
 			c.salvar_dados(indice, _nome, _sobrenome, _cpf, _idade, _celular, _senha)
 			print('Seus dados foram coletados, agora efetue o login.')
 			print('Esses são seus dados de Conta e Agência.')
