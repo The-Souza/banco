@@ -10,14 +10,17 @@ while True:
 	print()
 
 	if acesso == 'SIM':
-		print('Por favor digite sua conta e agência:')
-		_conta = input('Conta: ')
-		_agencia = input('Agência: ')
-		print()
-		_senha = input('Senha: ')
-		
+		while True:
+			print('Por favor digite sua conta e agência:')
+			_agencia = input('Agência: ')
+			_conta = input('Conta: ')
+			print()
+			_senha = input('Senha: ')
 
-		break
+			c.checar_agencia(_agencia)
+			c.checar_contas(_conta)
+
+			break
 
 	elif acesso == 'NÃO':
 		while True:
