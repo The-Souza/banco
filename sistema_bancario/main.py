@@ -59,8 +59,7 @@ while True:
 					print()
 					print('Por favor, digite o CPF de forma correta.')
 					print()
-					print(f'Nome: {_nome}')
-					print(f'Sobrenome: {_sobrenome}')
+					print(f'Nome: {_nome} \nSobrenome: {_sobrenome}')
 					cpf = input('CPF: ')
 
 			idade = input('Idade: ')
@@ -72,9 +71,7 @@ while True:
 					print()
 					print('Por favor, sua idade da forma correta.')
 					print()
-					print(f'Nome: {_nome}')
-					print(f'Sobrenome: {_sobrenome}')
-					print(f'CPF: {cpf}')
+					print(f'Nome: {_nome} \nSobrenome: {_sobrenome} \nCPF: {cpf}')
 					idade = input('Idade: ')
 
 			celular = input('Celular: ')
@@ -87,10 +84,7 @@ while True:
 					print()
 					print('Por favor, digite o número de celular de forma correta.')
 					print()
-					print(f'Nome: {_nome}')
-					print(f'Sobrenome: {_sobrenome}')
-					print(f'CPF: {cpf}')
-					print(f'Idade: {idade}')
+					print(f'Nome: {_nome} \nSobrenome: {_sobrenome} \nCPF: {cpf} \nIdade: {idade}')
 					celular = input('Celular: ')
 
 			_senha = input('Senha: ')
@@ -101,11 +95,7 @@ while True:
 					print()
 					print('Senha muito pequena.')
 					print()
-					print(f'Nome: {_nome}')
-					print(f'Sobrenome: {_sobrenome}')
-					print(f'CPF: {cpf}')
-					print(f'Idade: {idade}')
-					print(f'Celular: {celular}')
+					print(f'Nome: {_nome} \nSobrenome: {_sobrenome} \nCPF: {cpf} \nIdade: {idade} \nCelular: {celular}')
 					_senha = input('Senha: ')
 
 				elif tamanho_senha > 20:
@@ -113,11 +103,7 @@ while True:
 					print()
 					print('Senha muito grande.')
 					print()
-					print(f'Nome: {_nome}')
-					print(f'Sobrenome: {_sobrenome}')
-					print(f'CPF: {cpf}')
-					print(f'Idade: {idade}')
-					print(f'Celular: {celular}')
+					print(f'Nome: {_nome} \nSobrenome: {_sobrenome} \nCPF: {cpf} \nIdade: {idade} \nCelular: {celular}')
 					_senha = input('Senha: ')
 				else:
 					os.system('cls')
